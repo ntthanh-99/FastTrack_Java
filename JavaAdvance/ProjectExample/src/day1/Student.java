@@ -1,4 +1,4 @@
-package day1.functional_interface;
+package day1;
 
 public class Student {
     private String name;
@@ -23,5 +23,13 @@ public class Student {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
