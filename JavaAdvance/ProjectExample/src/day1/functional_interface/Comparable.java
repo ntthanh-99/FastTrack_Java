@@ -1,5 +1,7 @@
 package day1.functional_interface;
 
+import day1.Student;
+
 import java.util.Comparator;
 
 public class Comparable implements Comparator<Student> {

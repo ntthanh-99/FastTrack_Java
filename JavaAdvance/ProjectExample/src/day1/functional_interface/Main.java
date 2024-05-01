@@ -1,5 +1,7 @@
 package day1.functional_interface;
 
+import day1.Student;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
