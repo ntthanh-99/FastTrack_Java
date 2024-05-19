@@ -43,13 +43,16 @@ public class AnalysisResultController {
         List<AnalysisResultResponse> response = new ArrayList<>();
         AnalysisResultResponse analysisResultResponse = null;
         List<AnalysisResult> analysisResults = analysisResultService.findAll();
-        if (analysisResults != null) {
+        if (analysisResults != null && !analysisResults.isEmpty()) {
             for(AnalysisResult analysisResult: analysisResults){
                 ResponseEntity<Patient> patientResponse = patientClient.findById(analysisResult.getCccd());
-                analysisResult.setPatient(patientResponse.getBody());
+                analysisResultResponse = new AnalysisResultResponse();
+                analysisResultResponse.setPatient(patientResponse.getBody());
+                analysisResultResponse.setAnalysisResult(analysisResult);
+                response.add(analysisResultResponse);
             }
             return ResponseEntity.ok().body(response);
         }
-        return ResponseEntity.badRequest().body("Error: Don't exist analysis");
+        return ResponseEntity.ok().body("Success: Don't exist analysis");
     }
 }

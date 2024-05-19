@@ -11,8 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping(value = "/api/patient", produces = "application/json",
-        consumes = "application/json;charset=UTF-8")
+@RequestMapping(value = "/api/patient")
 public class PatientController {
     @Autowired
     PatientService patientService;
@@ -25,7 +24,7 @@ public class PatientController {
         if (patientService.findById(patient.getCccd()) != null) {
             return ResponseEntity.badRequest().body("Error: Patient is already existed!");
         }
-        if (validation.validatePatient(patient)) {
+        if (!validation.validatePatient(patient)) {
             return ResponseEntity.badRequest().body("Error: Information of patient isn't correct!");
         }
         Patient patientSaved = patientService.save(patient);

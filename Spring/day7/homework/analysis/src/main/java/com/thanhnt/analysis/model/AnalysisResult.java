@@ -34,7 +34,7 @@ public class AnalysisResult {
     /*
      * Patient
      */
-    private Patient patient;
+    //private Patient patient;
 
     /*
      * Name of analysis
@@ -51,13 +51,11 @@ public class AnalysisResult {
     /*
      * Test start time of analysis
      */
-    @NotBlank
     private LocalDateTime analysisTimeStart;
 
     /*
      * Test end time of analysis
      */
-    @NotBlank
     private LocalDateTime analysisTimeEnd;
 
     /*
