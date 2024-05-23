@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "d0f85bdb-0ac2-4346-9131-950898e66bef",
+		"name": "Lession7 API",
+		"description": "API for lession7",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13733293"
+	},
+	"item": [
+		{
+			"name": "Register Patient",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cccd\": \"03509900xxxx\",\r\n    \"patientName\": \"Nguyen Tien Thanh\",\r\n    \"birthDate\": \"xx/xx/19xx\",\r\n    \"gender\": 1,\r\n    \"address\": \"HaNoi\",\r\n    \"phoneNumber\": \"038xxxxxxx\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/patient/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"patient",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Patient",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/patient/get?cccd=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"patient",
+						"get"
+					],
+					"query": [
+						{
+							"key": "cccd",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All AnalysisResult",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/api/analysis-result/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"analysis-result",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register AnalysisResult",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cccd\": \"03509900xxxx\",\r\n    \"analysisName\": \"Xet nghiem mau\",\r\n    \"analysisType\": \"Mau mau\",\r\n    \"analysisTimeStart\": \"\",\r\n    \"analysisTimeEnd\": \"\",\r\n    \"doctorName\" : \"ThanhNT\",\r\n    \"evaluate\" : \"Ti le tieu cau giam\",\r\n    \"result\": \"sot xuat huyet\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8082/api/analysis-result/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"analysis-result",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
