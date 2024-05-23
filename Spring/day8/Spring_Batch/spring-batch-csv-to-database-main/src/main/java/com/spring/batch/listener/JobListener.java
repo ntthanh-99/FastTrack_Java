@@ -1,0 +1,43 @@
+package com.spring.batch.listener;
+
+import org.springframework.batch.core.BatchStatus;
+import org.springframework.batch.core.JobExecution;
+import org.springframework.batch.core.listener.JobExecutionListenerSupport;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
+
+import com.spring.batch.dto.EmployeeDTO;
+
+/**
+ * The listener interface for receiving job events.
+ * The class that is interested in processing a job
+ * event implements this interface, and the object created
+ * with that class is registered with a component using the
+ * component's <code>addJobListener<code> method. When
+ * the job event occurs, that object's appropriate
+ * method is invoked.
+ *
+ */
+@Component
+public class JobListener extends JobExecutionListenerSupport {
+
+    /** The jdbc template. */
+    private final JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    public JobListener(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+    @Override
+    public void afterJob(JobExecution jobExecution) {
+        if(jobExecution.getStatus() == BatchStatus.COMPLETED) {
+            jdbcTemplate.query("select EMP_ID,EMP_NAME,EMP_ROLE,SALARY,YEAR_OF_EXPR from EMPLOYEE ",
+                    (rs,rowNum)->{
+                        return new EmployeeDTO(rs.getLong(1), rs.getString(2),rs.getString(3),rs.getString(4),
+                                rs.getInt(5));
+                    }
+            );
+        }
+    }
+}
