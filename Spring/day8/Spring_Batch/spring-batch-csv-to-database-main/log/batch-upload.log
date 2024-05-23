@@ -1,0 +1,174 @@
+2024-05-24 00:13:59,842 INFO com.spring.batch.BatchDataUpload [main] Starting BatchDataUpload on DESKTOP-NGQNBFE with PID 7476 (D:\Learning\FastTrack_Java\Spring\day8\Spring_Batch\spring-batch-csv-to-database-main\target\classes started by ThanhNT in D:\Learning\FastTrack_Java\Spring\day8\Spring_Batch\spring-batch-csv-to-database-main)
+2024-05-24 00:13:59,845 INFO com.spring.batch.BatchDataUpload [main] No active profile set, falling back to default profiles: default
+2024-05-24 00:14:01,300 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2024-05-24 00:14:01,305 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.16]
+2024-05-24 00:14:01,313 INFO org.apache.catalina.core.AprLifecycleListener [main] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_202\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk1.8.0_202\bin;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Amazon\AWSCLIV2\;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Program Files\WinRAR\WinRAR.exe;C:\Program Files\PostgreSQL\12\bin;C:\Program Files\PostgreSQL\12\lib;C:\ProgramData\chocolatey\bin;D:\Environment\apache-maven-3.9.3\bin;C:\Users\ThanhNT\AppData\Local\Programs\Python\Python310;C:\Program Files\nodejs\;C:\Users\ThanhNT\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\ThanhNT\AppData\Local\Programs\Python\Python310\;C:\Users\ThanhNT\AppData\Local\Microsoft\WindowsApps;C:\Users\ThanhNT\AppData\Local\GitHubDesktop\bin;C:\Users\ThanhNT\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ThanhNT\.dotnet\tools;;C:\Users\ThanhNT\.ebcli-virtual-env\executables;C:\Users\ThanhNT\AppData\Roaming\npm;.]
+2024-05-24 00:14:01,406 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2024-05-24 00:14:01,603 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2024-05-24 00:14:01,932 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-05-24 00:14:01,983 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2024-05-24 00:14:02,092 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.7.Final}
+2024-05-24 00:14:02,095 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2024-05-24 00:14:02,343 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2024-05-24 00:14:02,490 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2024-05-24 00:14:02,504 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [main] HHH000422: Disabling contextual LOB creation as connection was null
+2024-05-24 00:14:02,509 INFO org.hibernate.type.BasicTypeRegistry [main] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@51b01550
+2024-05-24 00:14:02,677 INFO org.hibernate.tool.schema.internal.SchemaCreatorImpl [main] HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@383caf89'
+2024-05-24 00:14:03,387 INFO com.spring.batch.BatchDataUpload [main] Started BatchDataUpload in 3.938 seconds (JVM running for 4.303)
+2024-05-24 00:15:00,006 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] Launch job employee and address Data Import Job ....
+2024-05-24 00:15:00,201 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:15:00,201 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:15:00,201 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:15:00,201 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:15:00,253 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] empoyeeJobExecution job execution completed, status : exitCode=COMPLETED;exitDescription= 
+2024-05-24 00:15:00,316 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:15:00,316 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:15:00,316 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:15:00,316 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:15:00,346 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] addressJobExecution job execution completed, status : exitCode=COMPLETED;exitDescription= 
+2024-05-24 00:15:00,347 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] All job execution completed, status : All Jobs executed !!!... 
+2024-05-24 00:16:00,008 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] Launch job employee and address Data Import Job ....
+2024-05-24 00:16:00,060 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:16:00,060 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:16:00,060 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:16:00,060 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:16:00,082 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] empoyeeJobExecution job execution completed, status : exitCode=COMPLETED;exitDescription= 
+2024-05-24 00:16:00,125 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:16:00,125 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:16:00,125 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:16:00,125 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:16:00,146 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] addressJobExecution job execution completed, status : exitCode=COMPLETED;exitDescription= 
+2024-05-24 00:16:00,147 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] All job execution completed, status : All Jobs executed !!!... 
+2024-05-24 00:17:00,007 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] Launch job employee and address Data Import Job ....
+2024-05-24 00:17:00,053 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:17:00,053 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:17:00,053 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:17:00,053 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:17:00,074 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] empoyeeJobExecution job execution completed, status : exitCode=COMPLETED;exitDescription= 
+2024-05-24 00:17:00,112 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:17:00,112 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:17:00,113 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:17:00,113 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:17:00,136 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] addressJobExecution job execution completed, status : exitCode=COMPLETED;exitDescription= 
+2024-05-24 00:17:00,136 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] All job execution completed, status : All Jobs executed !!!... 
+2024-05-24 00:18:00,001 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] Launch job employee and address Data Import Job ....
+2024-05-24 00:18:00,113 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:18:00,113 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:18:00,113 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:18:00,113 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:18:00,152 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] empoyeeJobExecution job execution completed, status : exitCode=COMPLETED;exitDescription= 
+2024-05-24 00:18:00,203 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:18:00,203 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:18:00,203 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:18:00,203 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:18:00,237 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] addressJobExecution job execution completed, status : exitCode=COMPLETED;exitDescription= 
+2024-05-24 00:18:00,237 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] All job execution completed, status : All Jobs executed !!!... 
+2024-05-24 00:19:00,009 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] Launch job employee and address Data Import Job ....
+2024-05-24 00:19:00,056 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:19:00,056 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:19:00,056 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:19:00,056 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:19:00,076 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] empoyeeJobExecution job execution completed, status : exitCode=COMPLETED;exitDescription= 
+2024-05-24 00:19:00,115 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:19:00,115 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:19:00,115 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:19:00,115 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:19:00,136 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] addressJobExecution job execution completed, status : exitCode=COMPLETED;exitDescription= 
+2024-05-24 00:19:00,136 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] All job execution completed, status : All Jobs executed !!!... 
+2024-05-24 00:20:00,010 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] Launch job employee and address Data Import Job ....
+2024-05-24 00:20:00,058 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:20:00,058 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:20:00,058 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:20:00,058 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:20:00,077 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] empoyeeJobExecution job execution completed, status : exitCode=COMPLETED;exitDescription= 
+2024-05-24 00:20:00,114 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:20:00,114 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:20:00,114 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:20:00,114 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:20:00,134 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] addressJobExecution job execution completed, status : exitCode=COMPLETED;exitDescription= 
+2024-05-24 00:20:00,134 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] All job execution completed, status : All Jobs executed !!!... 
+2024-05-24 00:21:00,008 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] Launch job employee and address Data Import Job ....
+2024-05-24 00:21:00,048 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:21:00,048 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:21:00,049 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:21:00,049 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:21:00,068 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] empoyeeJobExecution job execution completed, status : exitCode=COMPLETED;exitDescription= 
+2024-05-24 00:21:00,106 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:21:00,106 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:21:00,106 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:21:00,106 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:21:00,125 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] addressJobExecution job execution completed, status : exitCode=COMPLETED;exitDescription= 
+2024-05-24 00:21:00,125 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] All job execution completed, status : All Jobs executed !!!... 
+2024-05-24 00:22:00,003 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] Launch job employee and address Data Import Job ....
+2024-05-24 00:22:00,049 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:22:00,049 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:22:00,049 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:22:00,049 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:22:00,068 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] empoyeeJobExecution job execution completed, status : exitCode=COMPLETED;exitDescription= 
+2024-05-24 00:22:00,108 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:22:00,108 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:22:00,109 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:22:00,109 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:22:00,132 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] addressJobExecution job execution completed, status : exitCode=COMPLETED;exitDescription= 
+2024-05-24 00:22:00,132 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] All job execution completed, status : All Jobs executed !!!... 
+2024-05-24 00:23:00,007 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] Launch job employee and address Data Import Job ....
+2024-05-24 00:23:00,055 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:23:00,056 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:23:00,056 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:23:00,056 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:23:00,076 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] empoyeeJobExecution job execution completed, status : exitCode=COMPLETED;exitDescription= 
+2024-05-24 00:23:00,113 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:23:00,113 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:23:00,113 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:23:00,113 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:23:00,133 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] addressJobExecution job execution completed, status : exitCode=COMPLETED;exitDescription= 
+2024-05-24 00:23:00,133 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] All job execution completed, status : All Jobs executed !!!... 
+2024-05-24 00:24:00,001 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] Launch job employee and address Data Import Job ....
+2024-05-24 00:24:00,047 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:24:00,047 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:24:00,047 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:24:00,047 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:24:00,066 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] empoyeeJobExecution job execution completed, status : exitCode=COMPLETED;exitDescription= 
+2024-05-24 00:24:00,100 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:24:00,100 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:24:00,101 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:24:00,101 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:24:00,119 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] addressJobExecution job execution completed, status : exitCode=COMPLETED;exitDescription= 
+2024-05-24 00:24:00,120 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] All job execution completed, status : All Jobs executed !!!... 
+2024-05-24 00:24:47,496 INFO com.zaxxer.hikari.HikariDataSource [Thread-4] HikariPool-1 - Shutdown initiated...
+2024-05-24 00:24:47,500 INFO com.zaxxer.hikari.HikariDataSource [Thread-4] HikariPool-1 - Shutdown completed.
+2024-05-24 00:25:44,919 INFO com.spring.batch.BatchDataUpload [main] Starting BatchDataUpload on DESKTOP-NGQNBFE with PID 17252 (D:\Learning\FastTrack_Java\Spring\day8\Spring_Batch\spring-batch-csv-to-database-main\target\classes started by ThanhNT in D:\Learning\FastTrack_Java\Spring\day8\Spring_Batch\spring-batch-csv-to-database-main)
+2024-05-24 00:25:44,921 INFO com.spring.batch.BatchDataUpload [main] No active profile set, falling back to default profiles: default
+2024-05-24 00:25:46,440 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2024-05-24 00:25:46,440 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.16]
+2024-05-24 00:25:46,449 INFO org.apache.catalina.core.AprLifecycleListener [main] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_202\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk1.8.0_202\bin;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Amazon\AWSCLIV2\;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Program Files\WinRAR\WinRAR.exe;C:\Program Files\PostgreSQL\12\bin;C:\Program Files\PostgreSQL\12\lib;C:\ProgramData\chocolatey\bin;D:\Environment\apache-maven-3.9.3\bin;C:\Users\ThanhNT\AppData\Local\Programs\Python\Python310;C:\Program Files\nodejs\;C:\Users\ThanhNT\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\ThanhNT\AppData\Local\Programs\Python\Python310\;C:\Users\ThanhNT\AppData\Local\Microsoft\WindowsApps;C:\Users\ThanhNT\AppData\Local\GitHubDesktop\bin;C:\Users\ThanhNT\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ThanhNT\.dotnet\tools;;C:\Users\ThanhNT\.ebcli-virtual-env\executables;C:\Users\ThanhNT\AppData\Roaming\npm;.]
+2024-05-24 00:25:46,536 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2024-05-24 00:25:46,701 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2024-05-24 00:25:47,132 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-05-24 00:25:47,190 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2024-05-24 00:25:47,253 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.7.Final}
+2024-05-24 00:25:47,254 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2024-05-24 00:25:47,426 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2024-05-24 00:25:47,561 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2024-05-24 00:25:47,576 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [main] HHH000422: Disabling contextual LOB creation as connection was null
+2024-05-24 00:25:47,582 INFO org.hibernate.type.BasicTypeRegistry [main] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@3a2d3909
+2024-05-24 00:25:47,736 INFO org.hibernate.tool.schema.internal.SchemaCreatorImpl [main] HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@3e1fd62b'
+2024-05-24 00:25:48,432 INFO com.spring.batch.BatchDataUpload [main] Started BatchDataUpload in 3.917 seconds (JVM running for 4.33)
+2024-05-24 00:26:00,016 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] Launch job employee and address Data Import Job ....
+2024-05-24 00:26:00,226 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:26:00,226 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:26:00,226 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:26:00,226 INFO com.spring.batch.processor.EmployeeProcessor [scheduling-1] Transforming EmployeeModel(s) to EmployeeDTO(s)..
+2024-05-24 00:26:00,274 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] empoyeeJobExecution job execution completed, status : exitCode=COMPLETED;exitDescription= 
+2024-05-24 00:26:00,330 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:26:00,330 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:26:00,330 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:26:00,330 INFO com.spring.batch.processor.AddressProcessor [scheduling-1] Transforming AddressModel(s) to AddressDTO(s)..
+2024-05-24 00:26:00,362 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] addressJobExecution job execution completed, status : exitCode=COMPLETED;exitDescription= 
+2024-05-24 00:26:00,362 INFO com.spring.batch.config.JobLauncherConfig [scheduling-1] All job execution completed, status : All Jobs executed !!!... 
+2024-05-24 00:26:04,139 INFO com.zaxxer.hikari.HikariDataSource [Thread-4] HikariPool-1 - Shutdown initiated...
+2024-05-24 00:26:04,146 INFO com.zaxxer.hikari.HikariDataSource [Thread-4] HikariPool-1 - Shutdown completed.
