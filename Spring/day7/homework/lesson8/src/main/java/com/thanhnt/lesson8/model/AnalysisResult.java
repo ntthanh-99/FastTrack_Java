@@ -1,13 +1,12 @@
 package com.thanhnt.lesson8.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @NoArgsConstructor
@@ -49,12 +48,12 @@ public class AnalysisResult {
     /*
      * Test start time of analysis
      */
-    private LocalDateTime analysisTimeStart;
+    private String analysisTimeStart;
 
     /*
      * Test end time of analysis
      */
-    private LocalDateTime analysisTimeEnd;
+    private String analysisTimeEnd;
 
     /*
      * Doctor performed

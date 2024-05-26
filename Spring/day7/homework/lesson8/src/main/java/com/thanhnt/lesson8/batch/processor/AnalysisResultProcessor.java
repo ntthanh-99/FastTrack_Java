@@ -1,10 +1,8 @@
-package com.thanhnt.lesson8.processor;
+package com.thanhnt.lesson8.batch.processor;
 
 import com.thanhnt.lesson8.model.AnalysisResult;
 import org.springframework.batch.item.ItemProcessor;
-import org.springframework.stereotype.Component;
 
-@Component
 public class AnalysisResultProcessor implements ItemProcessor<AnalysisResult, AnalysisResult> {
 
     @Override

@@ -1,6 +1,4 @@
-package com.thanhnt.lesson8.config;
-
-import javax.sql.DataSource;
+package com.thanhnt.lesson8.batch.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,16 +6,13 @@ import org.springframework.batch.core.configuration.BatchConfigurationException;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.repository.support.JobRepositoryFactoryBean;
+import org.springframework.batch.support.DatabaseType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
 
-/**
- * <p>
- * Class description explaining the usage.
- * </p>
- * @see ApplicationBatchConfig
- */
+import javax.sql.DataSource;
+
 @Configuration
 @EnableBatchProcessing
 public class ApplicationBatchConfig
@@ -46,8 +41,9 @@ public class ApplicationBatchConfig
         factory.setDataSource(dataSource);
         factory.setTransactionManager(transactionManager);
         factory.setIsolationLevelForCreate("ISOLATION_READ_UNCOMMITTED");
-        //factory.setTablePrefix("BATCH_");
+        factory.setTablePrefix("BATCH_");
         // factory.setMaxVarCharLength(1000);
+        factory.setDatabaseType(DatabaseType.DB2.toString());
         try
         {
             factory.afterPropertiesSet();
