@@ -1,0 +1,36 @@
+## Design Pattern in Spring
+# Creational
+# Singleton
++ Spring contains bean in spring IoC container
++ By default, Spring creates all beans as singletons.
++ By changing, the bean scope from singleton to prototype using the @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE) annotation.
+
+# Factory
++ Spring defines the BeanFactory interface as an abstraction of a bean container
+
+# Structural
+# Proxy
++ 1.@Transactional
++ 2. the use of JDK dynamic proxies and CGLIB proxies to implement the dependency injection (DI) mechanism.
+        When a bean is configured for DI using an interface,
+        Spring creates a JDK dynamic proxy object that implements the interface and delegates method calls to the actual bean object
+
+# Decorator
++ HandlerInterceptor
++ DelegatingFilterProxy
+
+# Behavior
+# Template Method
++ JdbcTemplate
+
+# Observer
++ ApplicationEventPublisher
++ @EventListener
+
+# Command
++ JdbcTemplate
+
+## Design Pattern in Project
+# Proxy in servicePackage
+
+# Builder in payloadPackage

@@ -92,7 +92,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"cccd\": \"03509900xxxx\",\r\n    \"analysisName\": \"Xet nghiem mau\",\r\n    \"analysisType\": \"Mau mau\",\r\n    \"analysisTimeStart\": \"\",\r\n    \"analysisTimeEnd\": \"\",\r\n    \"doctorName\" : \"ThanhNT\",\r\n    \"evaluate\" : \"Ti le tieu cau giam\",\r\n    \"result\": \"sot xuat huyet\"\r\n}",
+					"raw": "{\r\n    \"cccd\": \"03509900xxxx\",\r\n    \"analysisName\": \"Xet nghiem mau\",\r\n    \"analysisType\": \"Mau mau\",\r\n    \"analysisTimeStart\": \"2024-04-01\",\r\n    \"analysisTimeEnd\": \"2024-04-02\",\r\n    \"doctorName\" : \"ThanhNT\",\r\n    \"evaluate\" : \"Ti le tieu cau giam\",\r\n    \"result\": \"sot xuat huyet\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -109,6 +109,32 @@
 						"api",
 						"analysis-result",
 						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get AnalysisResult",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8083/api/analysis-result/get?id=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"analysis-result",
+						"get"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
 					]
 				}
 			},

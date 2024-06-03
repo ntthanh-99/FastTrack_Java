@@ -4,6 +4,7 @@ import com.thanhnt.analysis.feignclient.PatientClient;
 import com.thanhnt.analysis.model.AnalysisResult;
 import com.thanhnt.analysis.model.Patient;
 import com.thanhnt.analysis.payload.response.AnalysisResultResponse;
+import com.thanhnt.analysis.payload.response.AnalysisResultResponseBuilder;
 import com.thanhnt.analysis.service.AnalysisResultService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,9 +47,15 @@ public class AnalysisResultController {
         if (analysisResults != null && !analysisResults.isEmpty()) {
             for(AnalysisResult analysisResult: analysisResults){
                 ResponseEntity<Patient> patientResponse = patientClient.findById(analysisResult.getCccd());
-                analysisResultResponse = new AnalysisResultResponse();
-                analysisResultResponse.setPatient(patientResponse.getBody());
-                analysisResultResponse.setAnalysisResult(analysisResult);
+                // Normal
+                //analysisResultResponse = new AnalysisResultResponse();
+                //analysisResultResponse.setPatient(patientResponse.getBody());
+                //analysisResultResponse.setAnalysisResult(analysisResult);
+                // Builder Pattern
+                analysisResultResponse = new AnalysisResultResponseBuilder()
+                        .buildAnalysisResult(analysisResult)
+                                .buildPatient(patientResponse.getBody())
+                                        .build();
                 response.add(analysisResultResponse);
             }
             return ResponseEntity.ok().body(response);
