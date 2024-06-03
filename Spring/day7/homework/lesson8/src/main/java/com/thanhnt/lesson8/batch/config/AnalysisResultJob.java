@@ -22,27 +22,31 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
 import java.io.File;
 import java.io.IOException;
 import java.io.Writer;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 @Configuration
 @EnableBatchProcessing
 public class AnalysisResultJob {
-    private static final Logger LOGGER =
-            LoggerFactory.getLogger(AnalysisResultJob.class);
-
+    private static final Logger LOGGER = LoggerFactory.getLogger(AnalysisResultJob.class);
     private static final String CSV_FILE = "output.csv";
-    final String[] headers = new String[]{"ID", "CCCD", "AnalysisName", "analysisType", "analysisTimeStart", "analysisTimeEnd", "doctorName", "evaluate", "result"};
+    private final String[] headers = new String[]{"id", "cccd", "analysisName", "analysisType", "analysisTimeStart", "analysisTimeEnd", "doctorName", "evaluate", "result"};
 
     @Autowired
     DataSource dataSource;
 
     @Autowired
     PlatformTransactionManager transactionManager;
+
+    @Autowired
+    JobRepository jobRepository;
 
     @Bean
     public JdbcCursorItemReader<AnalysisResult> reader() {
@@ -76,14 +80,19 @@ public class AnalysisResultJob {
         FlatFileItemWriter<AnalysisResult> writer = new FlatFileItemWriter<>();
         writer.setResource(new FileSystemResource(CSV_FILE));
         writer.setAppendAllowed(true);
-
+        // write header
         writer.setHeaderCallback(new FlatFileHeaderCallback() {
             @Override
             public void writeHeader(Writer writer) throws IOException {
-                writer.write("ID, CCCD, AnalysisName, analysisType, analysisTimeStart, analysisTimeEnd, doctorName, evaluate, result");
+                for (int i = 0; i < headers.length; i++) {
+                    if (i != headers.length - 1)
+                        writer.append(headers[i] + ",");
+                    else
+                        writer.append(headers[i]);
+                }
             }
         });
-
+        // set model for data mapping
         writer.setLineAggregator(new DelimitedLineAggregator() {
             {
                 setDelimiter(",");
@@ -98,16 +107,17 @@ public class AnalysisResultJob {
     }
 
     @Bean("AnalysisResultJob")
-    public Job analysisResulttJob(JobRepository jobRepository, JobListener listener) {
+    public Job analysisResulttJob(JobListener listener) {
         return new JobBuilder("AnalysisResultJob", jobRepository)
                 .incrementer(new RunIdIncrementer())
                 .listener(listener)
-                .start(exportData(jobRepository))
+                .flow(exportData())
+                .end()
                 .build();
     }
 
     @Bean("AnalysisResultJobStep")
-    public Step exportData(JobRepository jobRepository) {
+    public Step exportData() {
         return new StepBuilder("AnalysisResultJobStep", jobRepository).<AnalysisResult, AnalysisResult>chunk(10, transactionManager)
                 .reader(reader())
                 .processor(processor())

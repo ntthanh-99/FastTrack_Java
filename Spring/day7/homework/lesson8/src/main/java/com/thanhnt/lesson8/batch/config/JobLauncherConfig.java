@@ -2,10 +2,7 @@ package com.thanhnt.lesson8.batch.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.batch.core.Job;
-import org.springframework.batch.core.JobExecution;
-import org.springframework.batch.core.JobParameters;
-import org.springframework.batch.core.JobParametersInvalidException;
+import org.springframework.batch.core.*;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.batch.core.repository.JobExecutionAlreadyRunningException;
@@ -21,7 +18,6 @@ import org.springframework.scheduling.annotation.Scheduled;
 @EnableBatchProcessing
 @EnableScheduling
 public class JobLauncherConfig {
-
     /**
      * The Constant LOGGER.
      */
@@ -43,13 +39,12 @@ public class JobLauncherConfig {
     Job analysisResultJob;
 
     /**
-     * Lanch jobs.
+     * Launch jobs.
      */
     @Scheduled(cron = "${cron.expression-value}")
     public void setJobLauncherJobs() {
-        //Map<String, JobParameter> maps = new HashMap<>();
-        //maps.put("time", new JobParameter(System.currentTimeMillis()));
-        JobParameters parameters = new JobParameters();
+        JobParameters parameters = new JobParametersBuilder()
+                .addString("time", String.valueOf(System.currentTimeMillis())).toJobParameters();
 
         try {
             LOGGER.info("Job: launch export analysisResult to CSV ....");

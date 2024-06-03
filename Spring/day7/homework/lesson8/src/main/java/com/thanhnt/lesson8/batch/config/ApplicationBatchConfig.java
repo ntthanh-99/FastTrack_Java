@@ -15,18 +15,23 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableBatchProcessing
-public class ApplicationBatchConfig
-{
+public class ApplicationBatchConfig {
 
-    /** The Constant LOGGER. */
+    /**
+     * The Constant LOGGER.
+     */
     private static final Logger LOGGER =
             LoggerFactory.getLogger(ApplicationBatchConfig.class);
 
-    /** The data source. */
+    /**
+     * The data source.
+     */
     @Autowired
     public DataSource dataSource;
 
-    /** The transaction manager. */
+    /**
+     * The transaction manager.
+     */
     @Autowired
     PlatformTransactionManager transactionManager;
 
@@ -35,8 +40,7 @@ public class ApplicationBatchConfig
      *
      * @return Job repository holds the
      */
-    protected JobRepository createJobRepository()
-    {
+    protected JobRepository createJobRepository() {
         JobRepositoryFactoryBean factory = new JobRepositoryFactoryBean();
         factory.setDataSource(dataSource);
         factory.setTransactionManager(transactionManager);
@@ -44,12 +48,10 @@ public class ApplicationBatchConfig
         factory.setTablePrefix("BATCH_");
         // factory.setMaxVarCharLength(1000);
         factory.setDatabaseType(DatabaseType.DB2.toString());
-        try
-        {
+        try {
             factory.afterPropertiesSet();
             return factory.getObject();
-        } catch (Exception exception)
-        {
+        } catch (Exception exception) {
             LOGGER.error("Exception message : {} ", exception.getMessage());
             throw new BatchConfigurationException(exception);
         }

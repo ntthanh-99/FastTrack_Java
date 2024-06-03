@@ -13,16 +13,19 @@ import org.springframework.stereotype.Component;
 public class JobListener extends JobExecutionListenerSupport {
     private static final Logger LOGGER = LoggerFactory.getLogger(JobListener.class);
 
-    /** The jdbc template. */
+    /**
+     * The jdbc template.
+     */
     private final JdbcTemplate jdbcTemplate;
 
     @Autowired
     public JobListener(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
+
     @Override
     public void afterJob(JobExecution jobExecution) {
-        if(jobExecution.getStatus() == BatchStatus.COMPLETED) {
+        if (jobExecution.getStatus() == BatchStatus.COMPLETED) {
             LOGGER.info("Job Complete!");
         }
     }

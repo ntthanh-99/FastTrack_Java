@@ -1,12 +1,13 @@
 package com.thanhnt.lesson8.controller;
 
+import com.thanhnt.lesson8.feignclient.PatientClient;
 import com.thanhnt.lesson8.model.AnalysisResult;
+import com.thanhnt.lesson8.model.Patient;
 import com.thanhnt.lesson8.payload.response.AnalysisResultResponse;
 import com.thanhnt.lesson8.service.AnalysisResultService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,22 +23,22 @@ public class AnalysisResultController {
     //PatientClient patientClient;
 
     @PostMapping("/register")
-    public Mono<?> registerPatient(@RequestBody AnalysisResult analysisResult) {
+    public ResponseEntity<?> registerPatient(@RequestBody AnalysisResult analysisResult) {
         AnalysisResult analysisResultSaved = analysisResultService.save(analysisResult);
-        return Mono.just("Success: AnalysisResult is created");
+        return ResponseEntity.ok().body("Success: AnalysisResult is created");
     }
 
     @RequestMapping("/get")
-    public Mono<?> findById(@RequestParam("id") int id) throws Exception {
+    public ResponseEntity<?> findById(@RequestParam("id") int id) throws Exception {
         AnalysisResult analysisResult = analysisResultService.findById(id);
         if (analysisResult != null) {
-            return Mono.just(analysisResult);
+            return ResponseEntity.ok().body(analysisResult);
         }
-        return Mono.just("Error: Patient isn't exist!");
+        return ResponseEntity.badRequest().body("Error: Patient isn't exist!");
     }
 
     @RequestMapping("/all")
-    public Flux<?> findAll() {
+    public ResponseEntity<?> findAll() {
         List<AnalysisResultResponse> response = new ArrayList<>();
         AnalysisResultResponse analysisResultResponse = null;
         List<AnalysisResult> analysisResults = analysisResultService.findAll();
@@ -45,12 +46,12 @@ public class AnalysisResultController {
             for (AnalysisResult analysisResult : analysisResults) {
                 //ResponseEntity<Patient> patientResponse = patientClient.findById(analysisResult.getCccd());
                 analysisResultResponse = new AnalysisResultResponse();
-                //analysisResultResponse.setPatient(patientResponse.getBody());
+                //.setPatient(patientResponse.getBody());
                 analysisResultResponse.setAnalysisResult(analysisResult);
                 response.add(analysisResultResponse);
             }
-            return Flux.just(response);
+            return ResponseEntity.ok().body(response);
         }
-        return Flux.just("Success: Don't exist analysis");
+        return ResponseEntity.ok().body("Success: Don't exist analysis");
     }
 }
