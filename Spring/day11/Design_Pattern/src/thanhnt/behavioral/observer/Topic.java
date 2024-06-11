@@ -17,7 +17,7 @@ public class Topic implements Publisher {
     public void subscribe(Subscriber obj) {
         if (obj == null) throw new NullPointerException("Null Observer");
         synchronized (MUTEX) {
-            if (!publishers.contains(obj)){
+            if (!publishers.contains(obj)) {
                 publishers.add(obj);
             }
         }

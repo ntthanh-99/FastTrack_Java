@@ -9,12 +9,12 @@ public class Singleton {
     }
 
     // static method getInstance
-    public static Singleton getInstance(){
+    public static Singleton getInstance() {
         return instance;
     }
 
     // some other method
-    public void showMessage(){
+    public void showMessage() {
         System.out.println("HELLO WORLD!");
     }
 }

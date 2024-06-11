@@ -1,7 +1,7 @@
 package thanhnt.creational.builder;
 
 // concrete builder
-public class CarBuilder implements Builder{
+public class CarBuilder implements Builder {
     // Step 2: Concrete builder implement method
     private String manufacturer;
     private String type;

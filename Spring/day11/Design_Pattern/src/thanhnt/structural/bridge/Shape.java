@@ -4,7 +4,7 @@ package thanhnt.structural.bridge;
 public abstract class Shape {
     private Color color;
 
-    public String getColor(){
+    public String getColor() {
         return color.getColor();
     }
 

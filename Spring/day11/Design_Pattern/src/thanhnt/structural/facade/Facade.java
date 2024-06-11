@@ -10,8 +10,9 @@ public class Facade {
         square = new Square();
         rectangle = new Rectangle();
     }
+
     // business
-    public void drawShape(){
+    public void drawShape() {
         circle.draw();
         square.draw();
         rectangle.draw();
