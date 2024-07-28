@@ -23,7 +23,6 @@ import java.util.UUID;
 @RequestMapping(value = "/api/analysis-result", produces = "application/json")
 public class AnalysisResultController {
     private final String serviceId = "AnalysisResult";
-    private final String requestId = UUID.randomUUID().toString();
 
     @Autowired
     AnalysisResultService analysisResultService;
@@ -32,10 +31,13 @@ public class AnalysisResultController {
     PatientClient patientClient;
 
     @PostMapping("/register")
-    public ResponseEntity<?> registerPatient(@Valid @RequestBody AnalysisResult analysisResult) {
+    public ResponseEntity<?> registerAnalysisResult(@Valid @RequestBody AnalysisResult analysisResult) {
+        final String requestId = UUID.randomUUID().toString();
         MDC.put("serviceId", serviceId);
         MDC.put("requestId", requestId);
+        MDC.put("patientId", analysisResult.getCccd());
         try {
+            log.info("registerAnalysisResultForPatient: {}", analysisResult.getCccd());
             AnalysisResult analysisResultSaved = analysisResultService.save(analysisResult);
             return ResponseEntity.ok().body("Success: AnalysisResult is created");
         }finally {
@@ -45,9 +47,11 @@ public class AnalysisResultController {
 
     @RequestMapping("/get")
     public ResponseEntity<?> findById(@RequestParam("id") int id) {
+        final String requestId = UUID.randomUUID().toString();
         MDC.put("serviceId", serviceId);
         MDC.put("requestId", requestId);
         try {
+            log.info("findAnalysisResultId");
             AnalysisResult analysisResult = analysisResultService.findById(id);
             if (analysisResult != null) {
                 return ResponseEntity.ok().body(analysisResult);
@@ -60,10 +64,11 @@ public class AnalysisResultController {
 
     @RequestMapping("/all")
     public ResponseEntity<?> findAll() {
+        final String requestId = UUID.randomUUID().toString();
         MDC.put("serviceId", serviceId);
         MDC.put("requestId", requestId);
         try {
-            log.info("AnalysisService/All");
+            log.info("getAllAnalysisResult!!");
             List<AnalysisResultResponse> response = new ArrayList<>();
             AnalysisResultResponse analysisResultResponse = null;
             List<AnalysisResult> analysisResults = analysisResultService.findAll();
