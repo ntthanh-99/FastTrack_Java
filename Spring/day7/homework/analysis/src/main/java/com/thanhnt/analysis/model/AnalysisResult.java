@@ -51,12 +51,12 @@ public class AnalysisResult {
     /*
      * Test start time of analysis
      */
-    private LocalDateTime analysisTimeStart;
+    private String analysisTimeStart;
 
     /*
      * Test end time of analysis
      */
-    private LocalDateTime analysisTimeEnd;
+    private String analysisTimeEnd;
 
     /*
      * Doctor performed
