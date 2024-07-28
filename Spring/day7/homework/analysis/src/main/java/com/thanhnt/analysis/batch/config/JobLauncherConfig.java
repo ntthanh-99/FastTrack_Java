@@ -41,7 +41,7 @@ public class JobLauncherConfig {
     /**
      * Launch jobs.
      */
-    @Scheduled(cron = "${cron.expression-value}")
+    //@Scheduled(cron = "${cron.expression-value}")
     public void setJobLauncherJobs() {
         JobParameters parameters = new JobParametersBuilder()
                 .addString("time", String.valueOf(System.currentTimeMillis())).toJobParameters();
