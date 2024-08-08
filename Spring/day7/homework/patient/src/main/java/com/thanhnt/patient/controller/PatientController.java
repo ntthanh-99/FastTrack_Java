@@ -31,7 +31,7 @@ public class PatientController {
         MDC.put("requestId", requestId);
         MDC.put("patientId", patient.getCccd());
         try {
-            log.info("registerPatient!!");
+            log.info("Register Patient for ID: {}", patient.getCccd());
             if (patientService.findById(patient.getCccd()) != null) {
                 return ResponseEntity.badRequest().body("Error: Patient is already existed!");
             }
@@ -41,6 +41,7 @@ public class PatientController {
             Patient patientSaved = patientService.save(patient);
             return ResponseEntity.ok().body("Success: Patient is registered");
         } finally {
+            log.info("Register Patient for ID: {} complete!!", patient.getCccd());
             MDC.clear();
         }
     }
@@ -52,13 +53,14 @@ public class PatientController {
         MDC.put("requestId", requestId);
         MDC.put("patientId", cccd);
         try {
-            log.info("findPatientByCCCD: {}", cccd);
+            log.info("Find Patient By CCCD: {}", cccd);
             Patient patient = patientService.findById(cccd);
             if (patient != null) {
                 return ResponseEntity.ok().body(patient);
             }
             return ResponseEntity.badRequest().body("Error: Patient isn't exist!");
         } finally {
+            log.info("Find Patient By CCCD: {} complete!!", cccd);
             MDC.clear();
         }
     }

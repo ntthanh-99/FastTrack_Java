@@ -37,10 +37,11 @@ public class AnalysisResultController {
         MDC.put("requestId", requestId);
         MDC.put("patientId", analysisResult.getCccd());
         try {
-            log.info("registerAnalysisResultForPatient: {}", analysisResult.getCccd());
+            log.info("Register AnalysisResult For PatientId: {}", analysisResult.getCccd());
             AnalysisResult analysisResultSaved = analysisResultService.save(analysisResult);
             return ResponseEntity.ok().body("Success: AnalysisResult is created");
         }finally {
+            log.info("Register AnalysisResult For PatientId: {} complete!!", analysisResult.getCccd());
             MDC.clear();
         }
     }
@@ -51,13 +52,14 @@ public class AnalysisResultController {
         MDC.put("serviceId", serviceId);
         MDC.put("requestId", requestId);
         try {
-            log.info("findAnalysisResultId");
+            log.info("Find Analysis Result for Id: {}", id);
             AnalysisResult analysisResult = analysisResultService.findById(id);
             if (analysisResult != null) {
                 return ResponseEntity.ok().body(analysisResult);
             }
             return ResponseEntity.badRequest().body("Error: Patient isn't exist!");
         } finally {
+            log.info("Find Analysis Result for Id: {} complete!!", id);
             MDC.clear();
         }
     }
@@ -68,7 +70,7 @@ public class AnalysisResultController {
         MDC.put("serviceId", serviceId);
         MDC.put("requestId", requestId);
         try {
-            log.info("getAllAnalysisResult!!");
+            log.info("Get All AnalysisResult !!");
             List<AnalysisResultResponse> response = new ArrayList<>();
             AnalysisResultResponse analysisResultResponse = null;
             List<AnalysisResult> analysisResults = analysisResultService.findAll();
@@ -91,6 +93,7 @@ public class AnalysisResultController {
             }
             return ResponseEntity.ok().body("Success: Don't exist analysis");
         } finally {
+            log.info("Get All AnalysisResult complete!!");
             MDC.clear();
         }
     }
