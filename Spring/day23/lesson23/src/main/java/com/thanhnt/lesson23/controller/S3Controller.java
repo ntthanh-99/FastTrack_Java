@@ -20,6 +20,11 @@ public class S3Controller {
     @Value("${aws.s3.bucket.name}")
     private String BUCKET_NAME;
 
+    @GetMapping("/welcome")
+    public ResponseEntity<?> welcome(){
+        return ResponseEntity.ok("HELLO");
+    }
+
     @GetMapping("/bucket/all")
     public ResponseEntity<?> listAll(){
         List<Bucket> buckets = s3Client.listBuckets();
@@ -50,11 +55,12 @@ public class S3Controller {
 
     @GetMapping("/bucket/file/upload")
     public ResponseEntity<?> update(){
-        File file = new File(".\\ThanhNT103.txt");
+        File file = new File("D:\\GitHub\\FastTrack_Java\\Spring\\day23\\lesson23\\ThanhNT103.txt");
         PutObjectRequest request = new PutObjectRequest(BUCKET_NAME, file.getName(), file);
         PutObjectResult response = s3Client.putObject(request);
         System.out.println(response);
         return ResponseEntity.ok(response);
+
     }
 
 }

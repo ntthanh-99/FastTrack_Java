@@ -1,0 +1,6 @@
+# Maven-specific
+target/
+
+# IntelliJ-specific
+out/
+.idea/
