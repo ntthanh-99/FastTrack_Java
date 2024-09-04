@@ -1,21 +1,55 @@
 pipeline {
     agent any
-
+    environment {
+                BUILD_VERSION = """${sh(
+                    returnStdout: true,
+                    script: 'echo $(echo $GIT_BRANCH | tr / _)-$BUILD_NUMBER'
+                )}"""
+                CODE_BUILD_PROJECT = 'java-fastrack-codebuild'
+                SERVICE = 'java-fasttrack-service'
+        }
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
+                awsCodeBuild artifactLocationOverride: '',
+                                     artifactNameOverride: '',
+                                     artifactNamespaceOverride: '',
+                                     artifactPackagingOverride: '',
+                                     artifactPathOverride: '',
+                                     artifactTypeOverride: '',
+                                     awsAccessKey: '',
+                                     awsSecretKey: '',
+                                     buildSpecFile: 'lesson23/buildspec.yml',
+                                     buildTimeoutOverride: '',
+                                     cacheLocationOverride: '',
+                                     cacheTypeOverride: '',
+                                     certificateOverride: '',
+                                     computeTypeOverride: '',
+                                     credentialsId: 'AWS-CodeBuild-Credentials',
+                                     credentialsType: 'jenkins',
+                                     envParameters: '',
+                                     environmentTypeOverride: '',
+                                     gitCloneDepthOverride: '',
+                                     imageOverride: '',
+                                     insecureSslOverride: '',
+                                     privilegedModeOverride: '',
+                                     projectName: "${env.CODE_BUILD_PROJECT}",
+                                     proxyHost: '',
+                                     proxyPort: '',
+                                     region: 'ap-southeast-1',
+                                     serviceRoleOverride: '',
+                                     sourceControlType: 'jenkins',
+                                     sourceLocationOverride: '',
+                                     sourceTypeOverride: '',
+                                     sourceVersion: "${env.GIT_BRANCH}",
+                                     envVariables: "[ { BUILD_BRANCH, ${env.GIT_BRANCH} }, { BUILD_VERSION, ${env.BUILD_VERSION} }]",
+                                     sseAlgorithm: ''
             }
         }
         stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+             steps {
+              echo "deploy"
+             }
+         }
     }
 }
